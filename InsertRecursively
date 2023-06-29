@@ -1,0 +1,15 @@
+void insertinside(string s,TrieNode *root){
+        int n=s.size();
+        TrieNode *child=root;
+        for(int i=0;i<n;i++){
+            int ch=s[i]-'a';
+            if(child->children[ch]==NULL){
+                TrieNode* temp =new TrieNode();
+                child->children[ch]=temp;
+                child=temp;
+            }
+            else child=child->children[ch];
+            
+        }
+        child->isterminal=true;
+    }
